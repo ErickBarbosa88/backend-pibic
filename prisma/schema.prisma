@@ -18,8 +18,6 @@ model Administrador {
   nome      String
   email     String
   token     String?
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
 }
 
 model Aluno {
@@ -28,8 +26,7 @@ model Aluno {
   email     String
   matricula Int
   curso     String
-  projeto   Projeto          @relation(fields: [projetoId], references: [id])
-  projetoId String
+  projeto   String       
   telefone  String
   emailProfessor  String
 }
@@ -41,10 +38,9 @@ model Professor {
   matricula String
   curso     String
   token     String?
-  projeto   Projeto              @relation(fields: [projetoId], references: [id])
+  projeto   String             
   projetoId String
-  createdAt DateTime             @default(now())
-  updatedAt DateTime             @updatedAt
+  
 }
 
 model Projeto {
@@ -53,8 +49,5 @@ model Projeto {
   areaConhecimento String
   escola           String
   status           Boolean
-  createdAt        DateTime             @default(now())
-  updatedAt        DateTime             @updatedAt
-  Aluno            Aluno[]
-  Professor        Professor[]
+  
 }
