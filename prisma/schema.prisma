@@ -24,7 +24,7 @@ model Aluno {
   id        String           @id @default(uuid())
   nome      String
   email     String
-  matricula Int
+  matricula String
   curso     String
   projeto   String       
   telefone  String
