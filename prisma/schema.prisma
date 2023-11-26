@@ -31,7 +31,7 @@ model Aluno {
   projeto   Projeto          @relation(fields: [projetoId], references: [id])
   projetoId String
   telefone  String
-  emailProfessor String
+  emailProfessor  String
 }
 
 model Professor {

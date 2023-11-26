@@ -2,15 +2,15 @@ import { Request, Response } from 'express';
 import * as alunoService from '../services/Aluno';
 
 export async function criarAluno(req: Request, res: Response) {
-  const { nome, email, matricula, curso, status, indicacao, projetoId } = req.body;
+  const { nome, email, matricula, curso, telefone, emailProfessor, projeto, projetoId } = req.body;
 
   const aluno = await alunoService.criarAluno({
     nome,
     email,
     matricula,
     curso,
-    status,
-    indicacao,
+    telefone,
+    emailProfessor,
     projeto: {
       connect: {
         id: projetoId
@@ -23,15 +23,16 @@ export async function criarAluno(req: Request, res: Response) {
 
 export async function atualizarAluno(req: Request, res: Response) {
   const { id } = req.params;
-  const { nome, email, matricula, curso, status, indicacao } = req.body;
+  const { nome, email, matricula, curso, projeto, telefone, emailProfessor } = req.body;
 
   const aluno = await alunoService.atualizarAluno(id, {
     nome,
     email,
     matricula,
     curso,
-    status,
-    indicacao,
+    projeto,
+    telefone,
+    emailProfessor
   });
 
   if (!aluno) {
