@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import * as alunoService from '../services/Aluno';
 
 export async function criarAluno(req: Request, res: Response) {
-  const { nome, email, matricula, curso, telefone, emailProfessor, projeto, projetoId } = req.body;
+  const { nome, email, matricula, curso, telefone, projeto, emailProfessor} = req.body;
 
   const aluno = await alunoService.criarAluno({
     nome,
@@ -10,12 +10,9 @@ export async function criarAluno(req: Request, res: Response) {
     matricula,
     curso,
     telefone,
-    emailProfessor,
-    projeto: {
-      connect: {
-        id: projetoId
-      }
-    }
+    projeto,
+    emailProfessor
+    
   });
 
   res.json(aluno);
