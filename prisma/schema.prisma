@@ -17,7 +17,7 @@ model Administrador {
   id        String    @id @default(uuid())
   nome      String
   email     String
-  token     String?
+  senha     String
 }
 
 model Aluno {
