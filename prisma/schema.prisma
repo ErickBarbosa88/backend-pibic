@@ -37,9 +37,7 @@ model Professor {
   email     String
   matricula String
   curso     String
-  token     String?
-  projeto   String             
-  projetoId String
+  
   
 }
 
