@@ -20,15 +20,35 @@ model Administrador {
   senha     String
 }
 
-model Aluno {
-  id        String           @id @default(uuid())
-  nome      String
-  email     String
-  matricula String
-  curso     String
-  projeto   String       
-  telefone  String
-  emailProfessor  String
+model FormularioAluno {
+  id                      String   @id @default(uuid())
+  email                   String
+  nomeCompletoOrientador  String
+  titulacao               String
+  matricula               String
+  cpfOrientador           String
+  cursoOrientador         String
+  telefoneOrientador      String
+  tituloProjeto           String
+  areaConhecimentoCNPQ    String
+  nomeGrupoPesquisa       String
+  nomeAluno               String
+  registroAcademico       String
+  indicacao               String
+  condicaoFinal           String
+  status                  String
+  tituloPlanoTrabalho     String
+  emailInstitucionalAluno String
+  enderecoCompleto        String
+  cpfAluno                String
+  rgAluno                 String
+  dataNascimento          String
+  telefoneAluno           String
+  linkLattes              String
+  obs1                    String
+  obs2                    String
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
 }
 
 model Professor {
