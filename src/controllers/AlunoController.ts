@@ -2,16 +2,55 @@ import { Request, Response } from 'express';
 import * as alunoService from '../services/Aluno';
 
 export async function criarAluno(req: Request, res: Response) {
-  const { nome, email, matricula, curso, telefone, projeto, emailProfessor} = req.body;
+  const {  email,
+    nomeCompletoOrientador,
+    titulacao,
+    matricula,
+    cpfOrientador,
+    cursoOrientador,
+    telefoneOrientador,
+    tituloProjeto,
+    areaConhecimentoCNPQ,
+    nomeGrupoPesquisa,
+    nomeAluno,
+    registroAcademico,
+    indicacao,
+    condicaoFinal,
+    tituloPlanoTrabalho,
+    emailInstitucionalAluno,
+    enderecoCompleto, 
+    cpfAluno, 
+    rgAluno,
+    dataNascAluno,
+    telefoneAluno, 
+    linkLattes,
+    obs1} = req.body;
 
   const aluno = await alunoService.criarAluno({
-    nome,
     email,
+    nomeCompletoOrientador,
+    titulacao,
     matricula,
-    curso,
-    telefone,
-    projeto,
-    emailProfessor
+    cpfOrientador,
+    cursoOrientador,
+    telefoneOrientador,
+    tituloProjeto,
+    areaConhecimentoCNPQ,
+    nomeGrupoPesquisa,
+    nomeAluno,
+    registroAcademico,
+    indicacao,
+    condicaoFinal,
+    tituloPlanoTrabalho,
+    emailInstitucionalAluno,
+    enderecoCompleto, 
+    cpfAluno, 
+    rgAluno,
+    dataNascAluno,
+    telefoneAluno, 
+    linkLattes,
+    obs1,
+
     
   });
 
@@ -20,16 +59,53 @@ export async function criarAluno(req: Request, res: Response) {
 
 export async function atualizarAluno(req: Request, res: Response) {
   const { id } = req.params;
-  const { nome, email, matricula, curso, projeto, telefone, emailProfessor } = req.body;
+  const { email, nomeCompletoOrientador,
+    titulacao,
+    matricula,
+    cpfOrientador,
+    cursoOrientador,
+    telefoneOrientador,
+    tituloProjeto,
+    areaConhecimentoCNPQ,
+    nomeGrupoPesquisa,
+    nomeAluno,
+    registroAcademico,
+    indicacao,
+    condicaoFinal,
+    tituloPlanoTrabalho,
+    emailInstitucionalAluno,
+    enderecoCompleto, 
+    cpfAluno, 
+    rgAluno,
+    dataNascAluno,
+    telefoneAluno, 
+    linkLattes,
+    obs1 } = req.body;
 
   const aluno = await alunoService.atualizarAluno(id, {
-    nome,
     email,
+    nomeCompletoOrientador,
+    titulacao,
     matricula,
-    curso,
-    projeto,
-    telefone,
-    emailProfessor
+    cpfOrientador,
+    cursoOrientador,
+    telefoneOrientador,
+    tituloProjeto,
+    areaConhecimentoCNPQ,
+    nomeGrupoPesquisa,
+    nomeAluno,
+    registroAcademico,
+    indicacao,
+    condicaoFinal,
+    tituloPlanoTrabalho,
+    emailInstitucionalAluno,
+    enderecoCompleto, 
+    cpfAluno, 
+    rgAluno,
+    dataNascAluno,
+    telefoneAluno, 
+    linkLattes,
+    obs1,
   });
 
   if (!aluno) {
